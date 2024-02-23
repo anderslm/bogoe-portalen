@@ -20,10 +20,10 @@ WORKDIR /app
 # Copy the compiled application from the build stage
 COPY --from=build /app/out .
 
-# Expose port 80 to the outside world
-EXPOSE 8000
+EXPOSE 80
+EXPOSE 4430
 
-ENV ASPNETCORE_URLS=http://+:8000
+ENV ASPNETCORE_URLS=http://+:80
 
 # Command to run the application
 ENTRYPOINT ["dotnet", "Portalen.Server.dll"]
