@@ -23,7 +23,5 @@ COPY --from=build /app/out .
 EXPOSE 80
 EXPOSE 443
 
-ENV ASPNETCORE_URLS=http://+:80
-
 # Command to run the application
 ENTRYPOINT ["dotnet", "Portalen.Server.dll"]

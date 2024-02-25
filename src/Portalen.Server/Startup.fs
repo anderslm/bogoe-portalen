@@ -1,5 +1,6 @@
 namespace Portalen.Server
 
+open System
 open Microsoft.AspNetCore
 open Microsoft.AspNetCore.Authentication.Cookies
 open Microsoft.AspNetCore.Builder
@@ -52,6 +53,7 @@ type Startup() =
         |> ignore
 
 module Program =
+    let port = match Environment.GetEnvironmentVariable("PORT") with | null -> "8081" | port -> port
 
     [<EntryPoint>]
     let main args =
@@ -59,6 +61,7 @@ module Program =
             .CreateDefaultBuilder(args)
             .UseStaticWebAssets()
             .UseStartup<Startup>()
+            .UseUrls($"http://*:{port}")
             .Build()
             .Run()
         0
