@@ -11,6 +11,7 @@ open Bolero.Templating.Client
 /// Routing endpoints definition.
 type Page =
     | [<EndPoint "/">] Home
+    | [<EndPoint "/bord">] Bord
 
 /// The Elmish application's model.
 type Model =
@@ -142,11 +143,26 @@ type Main = Template<"wwwroot/main.html">
 let homePage model dispatch =
     Main.Home().Elt()
 
+let bordPage model dispatch =
+    Main.Bord().Elt()
+
+let menuItem (model: Model) (page: Page) (text: string) =
+    Main.MenuItem()
+        .Active(if model.page = page then "is-active" else "")
+        .Url(router.Link page)
+        .Text(text)
+        .Elt()
+
 let view model dispatch =
     Main()
+        .Menu(concat {
+            menuItem model Home "Nyheder"
+            menuItem model Bord "Bestyrelsen"
+        })
         .Body(
             cond model.page <| function
             | Home -> homePage model dispatch
+            | Bord -> bordPage model dispatch
         )
         .Error(
             cond model.error <| function
