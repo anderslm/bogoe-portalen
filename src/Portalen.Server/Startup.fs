@@ -54,7 +54,6 @@ type Startup() =
 
 module Program =
     let port = match Environment.GetEnvironmentVariable("PORT") with | null -> "8081" | port -> port
-
     [<EntryPoint>]
     let main args =
         WebHost

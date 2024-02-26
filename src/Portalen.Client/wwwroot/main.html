@@ -1,120 +1,90 @@
-<div class="columns">
-  <aside class="column sidebar is-narrow">
-    <section class="section">
-      <nav class="menu">
-        <ul class="menu-list">
-          ${Menu}
-          <template id="MenuItem">
-            <li><a class="${Active}" href="${Url}">${Text}</a></li>
-          </template>
-        </ul>
-      </nav>
-    </section>
-  </aside>
-  <div class="column">
-    <section class="section">
-      ${Body}
+<!-- Main container -->
+<div class="page-container">
+	<!-- bloc-0 -->
+	<div class="bloc l-bloc " id="bloc-0">
+		<div class="container bloc-sm">
+			<div class="row">
+				<div class="col">
+					<nav class="navbar navbar-light row navbar-expand-md" role="navigation">
+						<div class="container-fluid ">
+							<a class="navbar-brand" href="/"><picture><source type="image/webp" srcset="img/image-3451.webp"><img src="img/image-3451.jpg" alt="logo" width="100" height="100"></picture></a>
+							<button id="nav-toggle" type="button" class="ui-navbar-toggler navbar-toggler border-0 p-0 ms-auto" aria-expanded="false" aria-label="Toggle navigation" data-bs-toggle="collapse" data-bs-target=".navbar-9567">
+								<span class="navbar-toggler-icon"><svg height="32" viewBox="0 0 32 32" width="32"><path class="svg-menu-icon" d="m2 9h28m-28 7h28m-28 7h28"></path></svg></span>
+							</button>
+							<div class="collapse navbar-collapse navbar-35179 navbar-9567 pulse-hvr">
+									<ul class="site-navigation nav navbar-nav ms-auto">
+										<li class="nav-item">
+											<a href="/" class="nav-link">Nyheder</a>
+										</li>
+										<li class="nav-item">
+											<a href="bestyrelsen.html" class="a-btn nav-link">Bestyrelsen</a>
+										</li>
+									</ul>
+								</div>
+						</div>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- bloc-0 END -->
 
-      <div id="notification-area">
-        <div>${Error}</div>
-      </div>
+	${Body}
+	${Error}
 
-      <template id="Home">
-        <div class="content">
-          <h1 class="title">Welcome to Bolero hej!</h1>
-          <p>This application demonstrates Bolero's major features.</p>
-          <ul>
-            <li>
-              The entire application is driven by
-              <a target="_blank" href="https://fsbolero.github.io/docs/Elmish">Elmish</a>.
-            </li>
-            <li>
-              The menu on the left switches pages based on
-              <a target="_blank" href="https://fsbolero.github.io/docs/Routing">routes</a>.
-            </li>
-            <li>
-              The <a href="/counter">Counter</a> page demonstrates event handlers and data binding in
-              <a target="_blank" href="https://fsbolero.github.io/docs/Templating">HTML templates</a>.
-            </li>
-            <li>
-              The <a href="/data">Download data</a> page demonstrates the use of
-              <a target="_blank" href="https://fsbolero.github.io/docs/Remoting">remote functions</a>.
-            </li>
-          </ul>
-          <p>Enjoy writing awesome apps!</p>
-        </div>
-      </template>
+	<template id="ErrorNotification">
+		<div class="notification is-warning">
+	    	<button class="delete ${HideClass}" onclick="${Hide}"></button>
+	    	${Text}
+	    </div>
+	</template>
 
-      <template id="Counter">
-        <h1 class="title">A simple counter</h1>
-        <p>
-          <button onclick="${Decrement}" class="button">-</button>
-          <input type="number" id="counter" class="input" bind="${Value}">
-          <button onclick="${Increment}" class="button">+</button>
-        </p>
-        <p>
-          The counter's value is: ${Value}
-        </p>
-      </template>
+	<template id="Home">
+		<!-- bloc-1 -->
+		<div class="bloc l-bloc" id="bloc-1">
+			<div class="container bloc-lg">
+				<div class="row">
+					<div class="col text-start">
+						<div class="row">
+							<div class="col-lg-2">
+								<div>
+									<picture><source type="image/webp" srcset="img/lazyload-ph.png" data-srcset="img/image-3451.webp"><img src="img/lazyload-ph.png" data-src="img/image-3451.jpg" class="img-fluid mx-auto d-block mt-lg-1 mb-lg-1 ms-lg-1 me-lg-1 pt-lg-1 pb-lg-1 ps-lg-1 pe-lg-1 lazyload" alt="placeholder image" width="162" height="162"></picture>
+								</div>
+							</div>
+							<div class="col mt-lg-2 mb-lg-2 ms-lg-2 me-lg-2 pt-lg-2 pb-lg-2 ps-lg-2 pe-lg-2 main1">
+								<div class="container-div-bloc-1-style">
+									<div class="row row-style">
+										<div class="bloc-padding-right col-lg-7 main1">
+											<div class="main-news">
+												<picture><source type="image/webp" srcset="img/lazyload-ph.png" data-srcset="img/placeholder-image.webp"><img src="img/lazyload-ph.png" data-src="img/placeholder-image.png" class="img-fluid mx-auto d-block img-style lazyload" alt="placeholder image" width="410" height="287"></picture>
+											</div>
+										</div>
+										<div class="col-lg-4 text-lg-center">
+											<div class="small2 container-div-style">
+												<picture><source type="image/webp" srcset="img/lazyload-ph.png" data-srcset="img/placeholder-image.webp"><img src="img/lazyload-ph.png" data-src="img/placeholder-image.png" class="img-fluid img-4-style mx-auto d-block lazyload" alt="placeholder image" width="145" height="102"></picture>
+												<div class="divider-h">
+												</div><picture><source type="image/webp" srcset="img/lazyload-ph.png" data-srcset="img/placeholder-image.webp"><img src="img/lazyload-ph.png" data-src="img/placeholder-image.png" class="img-fluid mx-auto d-block img-bloc-1-style lazyload" alt="placeholder image" width="150" height="105"></picture>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-2">
+								<div>
+									<picture><source type="image/webp" srcset="img/lazyload-ph.png" data-srcset="img/image-3451.webp"><img src="img/lazyload-ph.png" data-src="img/image-3451.jpg" class="img-fluid mx-auto d-block mt-lg-1 mb-lg-1 ms-lg-1 me-lg-1 pt-lg-1 pb-lg-1 ps-lg-1 pe-lg-1 lazyload" alt="placeholder image" width="162" height="162"></picture>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- bloc-1 END -->		
+	</template>
 
-      <template id="Data">
-        <h1 class="title">
-          Download data
-          <button class="button" onclick="${Reload}">Reload</button>
-        </h1>
-        <p>
-          Signed in as ${Username}.
-          <button class="button" onclick="${SignOut}">Sign out</button>
-        </p>
-        <table class="table is-fullwidth">
-          <thead>
-            <tr>
-              <th>Title</th>
-              <th>Author</th>
-              <th>Published</th>
-              <th>ISBN</th>
-            </tr>
-          </thead>
-          <tbody>
-            ${Rows}
-            <template id="EmptyData">
-              <tr><td colspan="4">Downloading book list...</td></tr>
-            </template>
-          </tbody>
-        </table>
-      </template>
+	<!-- ScrollToTop Button -->
+	<button aria-label="Scroll to top button" class="bloc-button btn btn-d scrollToTop" onclick="scrollToTarget('1',this)"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 32 32"><path class="scroll-to-top-btn-icon" d="M30,22.656l-14-13-14,13"/></svg></button>
+	<!-- ScrollToTop Button END-->
 
-      <template id="SignIn">
-        <h1 class="title">Sign in</h1>
-        <form onsubmit="${SignIn}">
-          <div class="field">
-            <label class="label">Username</label>
-            <div class="control">
-              <input class="input" bind="${Username}" />
-            </div>
-          </div>
-          <div class="field">
-            <label class="label">Password</label>
-            <div class="control">
-              <input class="input" type="password" bind="${Password}" />
-            </div>
-          </div>
-          <div class="field">
-            <div class="control">
-              <input type="submit" value="Sign in" />
-            </div>
-          </div>
-          ${ErrorNotification}
-        </form>
-      </template>
-
-      <template id="ErrorNotification">
-        <div class="notification is-warning">
-          <button class="delete ${HideClass}" onclick="${Hide}"></button>
-          ${Text}
-        </div>
-      </template>
-
-    </section>
-  </div>
 </div>
+<!-- Main container END -->
