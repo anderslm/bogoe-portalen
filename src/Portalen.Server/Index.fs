@@ -15,7 +15,6 @@ let page = doctypeHtml {
         link { attr.rel "stylesheet"; attr.href "styles.css" }
         script { attr.src "js/bootstrap.bundle.min.js" }
         script { attr.src "js/blocs.js" }
-        script { attr.src "js/lazysizes.min.js" }
     }
     body {
         div { attr.id "main"; comp<Client.Main.MyApp> }

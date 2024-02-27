@@ -31,20 +31,4 @@ type BookService(ctx: IRemoteContext, env: IWebHostEnvironment) =
             removeBookByIsbn = ctx.Authorize <| fun isbn -> async {
                 books.RemoveAll(fun b -> b.isbn = isbn) |> ignore
             }
-
-            signIn = fun (username, password) -> async {
-                if password = "password" then
-                    do! ctx.HttpContext.AsyncSignIn(username, TimeSpan.FromDays(365.))
-                    return Some username
-                else
-                    return None
-            }
-
-            signOut = fun () -> async {
-                return! ctx.HttpContext.AsyncSignOut()
-            }
-
-            getUsername = ctx.Authorize <| fun () -> async {
-                return ctx.HttpContext.User.Identity.Name
-            }
         }

@@ -53,7 +53,8 @@ type Startup() =
         |> ignore
 
 module Program =
-    let port = match Environment.GetEnvironmentVariable("PORT") with | null -> "8081" | port -> port
+    let port = match Environment.GetEnvironmentVariable("PORT") with | null -> "5000" | port -> port
+
     [<EntryPoint>]
     let main args =
         WebHost
