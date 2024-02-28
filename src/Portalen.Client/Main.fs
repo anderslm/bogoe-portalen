@@ -10,7 +10,7 @@ open Bolero.Templating.Client
 
 /// Routing endpoints definition.
 type Page =
-    | [<EndPoint "/">] Home
+    | [<EndPoint "/">] News
     | [<EndPoint "/board">] Board
 
 /// The Elmish application's model.
@@ -30,7 +30,7 @@ and Book =
 
 let initModel =
     {
-        page = Home
+        page = News
         books = None
     }
 
@@ -70,11 +70,12 @@ let router = Router.infer SetPage (fun model -> model.page)
 
 type Main = Template<"wwwroot/main.html">
 
-let homePage model dispatch =
-    Main.Home().Elt()
+type News = Template<"wwwroot/news.html">
 
-let boardPage model dispatch =
-    Main.Board().Elt()
+type Board = Template<"wwwroot/board.html">
+
+let homePage model dispatch =
+    Main().Elt()
 
 let menuItem (model: Model) (page: Page) (text: string) =
     Main.MenuItem()
@@ -86,13 +87,13 @@ let menuItem (model: Model) (page: Page) (text: string) =
 let view model dispatch =
     Main()
         .Menu(concat {
-            menuItem model Home "Nyheder"
-            menuItem model Board "Bestyrelsen"
+            menuItem model Page.News "Nyheder"
+            menuItem model Page.Board "Bestyrelsen"
         })
         .Body(
             cond model.page <| function
-            | Home -> homePage model dispatch
-            | Board -> boardPage model dispatch
+            | Page.News -> News().Elt()
+            | Page.Board -> Board().Elt()
         )
         .Elt()
 

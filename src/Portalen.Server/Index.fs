@@ -12,7 +12,7 @@ let page = doctypeHtml {
         title { "Bogø Portalen" }
         ``base`` { attr.href "/" }
         link { attr.rel "stylesheet"; attr.href "css/bootstrap.min.css" }
-        link { attr.rel "stylesheet"; attr.href "styles.css" }
+        link { attr.rel "stylesheet"; attr.href "css/styles.css" }
         script { attr.src "js/bootstrap.bundle.min.js" }
         script { attr.src "js/blocs.js" }
     }
